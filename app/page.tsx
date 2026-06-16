@@ -9,6 +9,7 @@ import { Projects } from '@/components/projects'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
 import { ScreenshotGallery } from '@/components/ScreenshotGallery'
+import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 
 export default function Home() {
@@ -24,7 +25,7 @@ export default function Home() {
       <Projects />
       <Contact />
       <Footer />
-      
+      <WhatsAppButton />
     </main>
   )
 }

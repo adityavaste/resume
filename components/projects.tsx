@@ -1,61 +1,64 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { ExternalLink, Star, GitFork } from 'lucide-react'
-import { Mail, Heart } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { Button } from '@/components/ui/button'
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ExternalLink, Star, GitFork } from "lucide-react";
+import { Mail, Heart } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: 'AWS EKS Platform',
-    description: 'Production-ready EKS platform with automated cluster provisioning, node management, and integrated monitoring.',
-    technologies: ['Terraform', 'EKS', 'Helm', 'Prometheus'],
+    title: "AWS EKS Platform",
+    description: "Production-ready EKS platform...",
+    technologies: ["Terraform", "EKS", "Helm", "Prometheus"],
     stars: 245,
     forks: 67,
-    github: '#',
-    demo: '#',
+    github: "https://github.com/adityavaste/finance_cluster.git",
+    demo: "https://github.com/adityavaste/finance_cluster.git",
   },
   {
-    title: 'Terraform Infrastructure Modules',
-    description: 'Reusable Terraform modules for AWS infrastructure including VPC, EKS, RDS, and security configurations.',
-    technologies: ['Terraform', 'AWS', 'HCL', 'GitHub Actions'],
+    title: "Terraform Infrastructure Modules",
+    description: "Reusable Terraform modules...",
+    technologies: ["Terraform", "AWS", "HCL", "GitHub Actions"],
     stars: 189,
     forks: 45,
-    github: '#',
-    demo: '#',
+    github: "https://github.com/adityavaste/finance_cluster.git",
+    demo: "https://github.com/adityavaste/finance_cluster.git",
   },
+
   {
-    title: 'GitOps Deployment Platform',
-    description: 'Complete GitOps setup with ArgoCD, progressive delivery, and automated rollback capabilities.',
-    technologies: ['ArgoCD', 'Kubernetes', 'Kustomize', 'Argo Rollouts'],
+    title: "GitOps Deployment Platform",
+    description:
+      "Complete GitOps setup with ArgoCD, progressive delivery, and automated rollback capabilities.",
+    technologies: ["ArgoCD", "Kubernetes", "Kustomize", "Argo Rollouts"],
     stars: 156,
     forks: 38,
-    github: '#',
-    demo: '#',
+    github: "#",
+    demo: "#",
   },
   {
-    title: 'Monitoring & Observability Stack',
-    description: 'Full observability stack with Prometheus, Grafana, Loki, and custom alerting integrations.',
-    technologies: ['Prometheus', 'Grafana', 'Loki', 'AlertManager'],
+    title: "Monitoring & Observability Stack",
+    description:
+      "Full observability stack with Prometheus, Grafana, Loki, and custom alerting integrations.",
+    technologies: ["Prometheus", "Grafana", "Loki", "AlertManager"],
     stars: 134,
     forks: 29,
-    github: '#',
-    demo: '#',
+    github: "#",
+    demo: "#",
   },
-]
+];
 
 export function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="py-24 relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,200,180,0.05),transparent_60%)]" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative">
         <motion.div
           ref={ref}
@@ -71,7 +74,8 @@ export function Projects() {
             Featured Projects
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Open source projects and tools I&apos;ve built to solve real-world infrastructure challenges
+            Open source projects and tools I&apos;ve built to solve real-world
+            infrastructure challenges
           </p>
         </motion.div>
 
@@ -99,9 +103,11 @@ export function Projects() {
                   </div>
                 </div>
               </div>
-              
-              <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
-              
+
+              <p className="text-muted-foreground mb-4 flex-grow">
+                {project.description}
+              </p>
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.technologies.map((tech) => (
                   <span
@@ -114,31 +120,55 @@ export function Projects() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Button variant="outline" size="sm" className="gap-2 flex-1">
-                  <FaGithub className="w-4 h-4" />
-                  Source Code
-                </Button>
-                <Button size="sm" className="gap-2 flex-1 bg-primary text-primary-foreground hover:bg-primary/90">
-                  <ExternalLink className="w-4 h-4" />
-                  View Demo
-                </Button>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button variant="outline" size="sm" className="gap-2 w-full">
+                    <FaGithub className="w-4 h-4" />
+                    Source Code
+                  </Button>
+                </a>
+
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    size="sm"
+                    className="gap-2 w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View Demo
+                  </Button>
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <Button variant="outline" size="lg" className="gap-2">
-            <FaGithub className="w-5 h-5" />
-            View All Projects on GitHub
-          </Button>
-        </motion.div>
+       <motion.div
+  initial={{ opacity: 0 }}
+  animate={isInView ? { opacity: 1 } : {}}
+  transition={{ duration: 0.6, delay: 0.5 }}
+  className="text-center mt-12"
+>
+  <a
+    href="https://github.com/adityavaste"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button variant="outline" size="lg" className="gap-2">
+      <FaGithub className="w-5 h-5" />
+      View All Projects on GitHub
+    </Button>
+  </a>
+</motion.div>
       </div>
     </section>
-  )
+  );
 }
