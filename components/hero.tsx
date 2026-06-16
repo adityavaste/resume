@@ -73,10 +73,10 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-wrap items-center justify-center gap-4 pt-4"
           >
-            <a href="/resume.pdf" download>
+            <a href="/Aditya_vaste_resume.pdf" download>
               <Button
                 size="lg"
-                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 glow-orange"
+                className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90 glow-orange cursor-pointer"
               >
                 <Download className="w-4 h-4" />
                 Download Resume
@@ -87,8 +87,10 @@ export function Hero() {
               variant="outline"
               className="gap-2 border-border hover:bg-secondary"
             >
-              <Mail className="w-4 h-4" />
-              Contact Me
+              <a href="mailto:adityavaste@email.com?subject=Website%20Inquiry&body=Hello%20Aditya,">
+                <Mail className="w-1 h-4" />
+                Mail Me
+              </a>
             </Button>
           </motion.div>
         </motion.div>
@@ -101,9 +103,8 @@ export function Hero() {
         >
           <a
             href="#about"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="flex flex-col mt-10 items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
-            <span className="text-sm">Scroll to explore</span>
             <ChevronDown className="w-5 h-5 animate-bounce" />
           </a>
         </motion.div>

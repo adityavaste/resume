@@ -19,7 +19,7 @@ const skillCategories = [
       { name: 'S3', icon: '💾' },
       { name: 'CloudWatch', icon: '📊' },
       { name: 'IAM', icon: '🔐' },
-      { name: 'KMS', icon: '🔑' },
+      
     ],
   },
   {
@@ -39,7 +39,7 @@ const skillCategories = [
     color: 'chart-3',
     skills: [
       { name: 'MongoDB Atlas', icon: '🍃' },
-      { name: 'Redis', icon: '🔴' },
+     
     ],
   },
   {

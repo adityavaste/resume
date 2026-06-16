@@ -6,7 +6,7 @@ import { useRef } from 'react'
 import { Cloud, Server, Shield, Cpu } from 'lucide-react'
 
 const highlights = [
-  { icon: Cloud, label: 'Cloud Architecture', value: '50+', desc: 'Production Systems' },
+  { icon: Cloud, label: 'Cloud Architecture', value: '5+', desc: 'Production Systems' },
   { icon: Server, label: 'Infrastructure', value: '99.9%', desc: 'Uptime Achieved' },
   { icon: Shield, label: 'Security', value: '100%', desc: 'Compliance Rate' },
   { icon: Cpu, label: 'Automation', value: '80%', desc: 'Tasks Automated' },
