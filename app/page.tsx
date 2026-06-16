@@ -8,6 +8,8 @@ import { Certifications } from '@/components/certifications'
 import { Projects } from '@/components/projects'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
+import { ScreenshotGallery } from '@/components/ScreenshotGallery'
+
 
 export default function Home() {
   return (
@@ -18,10 +20,11 @@ export default function Home() {
       <Skills />
       <Architecture />
       <Experience />
-      <Certifications />
+      <ScreenshotGallery />
       <Projects />
       <Contact />
       <Footer />
+      
     </main>
   )
 }

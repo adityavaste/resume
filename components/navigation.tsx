@@ -51,8 +51,8 @@ export function Navigation() {
               {item.label}
             </a>
           ))}
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Hire Me
+          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
+        Hire Me
           </Button>
         </div>
 
