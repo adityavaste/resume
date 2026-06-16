@@ -1,14 +1,18 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Mail, Heart } from 'lucide-react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { Mail, Heart } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const footerLinks = [
-  { icon: FaGithub, href: 'https://github.com/johndoe', label: 'GitHub' },
-  { icon: FaLinkedin, href: 'https://linkedin.com/in/johndoe', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
-]
+  { icon: FaGithub, href: "https://github.com/adityavaste", label: "GitHub" },
+  {
+    icon: FaLinkedin,
+    href: "https://www.linkedin.com/in/aditya-vaste-777b402a8",
+    label: "LinkedIn",
+  },
+  { icon: Mail, href: "mailto:adityavaste@gmail.com", label: "Email" },
+];
 
 export function Footer() {
   return (
@@ -22,11 +26,18 @@ export function Footer() {
             className="text-center md:text-left"
           >
             <a href="#" className="text-2xl font-bold gradient-text">
-              JD
+              Aditya
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               DevOps & Cloud Engineer
             </p>
+
+            <a
+              href="mailto:adityavaste@gmail.com"
+              className="text-sm text-primary hover:underline mt-1 block"
+            >
+              adityavaste@gmail.com
+            </a>
           </motion.div>
 
           <motion.div
@@ -71,5 +82,5 @@ export function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
