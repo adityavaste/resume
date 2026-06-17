@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        AWS_REGION = "ap-south-1"
+        ACCOUNT_ID = "900840136675"
+        REPOSITORY = "ecr_resume"
+        IMAGE_TAG = "v1"
+    }
+
+    stages {
+
+        stage('Pipeline Starting') {
+            steps {
+                echo 'Pipeline starting...'
+            }
+        }
+
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t resume .'
+            }
+        }
+
+        stage('Login to ECR') {
+            steps {
+                sh '''
+                aws ecr get-login-password --region $AWS_REGION | \
+                docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+                '''
+            }
+        }
+
+        stage('Tag Image') {
+            steps {
+                sh '''
+                docker tag resume \
+                $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY:$IMAGE_TAG
+                '''
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                sh '''
+                docker push \
+                $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$REPOSITORY:$IMAGE_TAG
+                '''
+            }
+        }
+
+        stage('Done') {
+            steps {
+                echo 'Docker image pushed successfully.'
+            }
+        }
+    }
+}
